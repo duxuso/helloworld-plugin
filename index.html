@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="hello.js"></script>
+    <script type="text/javascript" src="newHello.js"></script>
+    <script type="text/javascript" src="newWorld.js"></script>
+
+    <script>
+
+    </script>
+
+    <script type="text/javascript">
+
+        //$(document).ready(function() {
+
+            $('#menu').animateMenu({animatePadding: 30, defaultPadding:10});
+
+        //});
+
+    </script>
+
+    <script>
+        $(document).ready( function() {
+            $('h2').helloWorld();
+        });
+    </script>
+
+    <script>
+        $(document).ready( function() {
+            $('a').hello2("Hello World! Haha");
+        });
+    </script>
+
+    <style>
+        body {font-family:arial;font-style:bold}
+        a {color:#666; text-decoration:none}
+        #menu {list-style:none;width:160px;padding-left:10px;}
+        #menu li {margin:0;padding:5px;cursor:hand;cursor:pointer}
+    </style>
+
+</head>
+
+<body>
+
+<h2>ddddddddddddddd</h2>
+<h2>ddddddddddddddd</h2>
+<h2>ddddddddddddddd</h2>
+
+<a href="#">eeeeeeeeeeeeeee</a>
+<a href="#">eeeeeeeeeeeeeee</a>
+<a href="#">eeeeeeeeeeeeeee</a>
+
+<ul id="menu">
+    <li>Home</li>
+    <li>Posts</li>
+    <li>About</li>
+    <li>Contact</li>
+</ul>
+
+</body>
+</html>

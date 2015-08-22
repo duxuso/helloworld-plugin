@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!--scripts-->
+    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="render.js"></script>
+    <script type="text/javascript" src="test.jsonp"></script>
+    <script type="text/javascript" src="http://status.campaignmonitor.com/api/issues/current"></script>
+    <script type="text/javascript" src="js/jquery.smoothState.min.js"></script>
+    <script type="text/javascript" src="js/function.js"></script>
+
+    <link rel="stylesheet" href="css/css.css">
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#spinner").bind("ajaxSend", function() {
+                $(this).show();
+            }).bind("ajaxStop", function() {
+                $(this).hide();
+            }).bind("ajaxError", function() {
+                $(this).hide();
+            });
+
+        });
+    </script>
+
+    <script>
+
+        $(document).ready( function() {
+
+            var url_local = "test.jsonp";
+            var url_remote = "http://status.campaignmonitor.com/api/issues/current";
+            var url_ = null;
+
+            $('#spinner').show();
+
+            $('h2').hello2(url_remote);
+            $('a').hello2(url_local);
+            $('h1').hello2(url_);
+
+        });
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <div id="spinner" class="spinner" style="display:none;">
+            <img id="img-spinner" src="img/spinner.gif" alt="Loading"/>
+        </div>
+    </header>
+
+    <div id="main" class="container" style="padding-top:30px">
+        <div>
+            <p><a id="a" href="#">Load the current issues list</a></p>
+        </div>
+        <div>
+            <h2>Load the current issues list</h2>
+        </div>
+        <div>
+            <h1>Hahahahahahahahahahahahahaha</h1>
+        </div>
+
+        <div id="results" style="display:none">
+        <!-- Each issue should be rendered with the following template -->
+            <div class="issue-template">
+                <h3>Issue Title - Begin 10 minutes ago</h3> <!-- If status === Unresolved -->
+
+                <h3>Issue Title - Resolved 10 minutes ago</h3> <!-- If status === Resolved -->
+
+                <p>Issue description</p>
+                <div style="padding-left:50px">
+                    <p>Updates:</p>
+                    <!-- Each update should be rendered with the following template -->
+
+                    <div class="update-template">
+                        <p>Update</p>
+
+                        <em>By Mat 10 minutes ago</em>
+
+                        <hr style="width:50%"/>
+                    </div>
+                </div>
+                <hr />
+            </div>
+            <!-- Render this if there are no issues returned -->
+            <div class="no-issues-template" id="d">
+                Everybody is happy!
+            </div>
+        </div>
+    </div>
+</body>
+</html>
